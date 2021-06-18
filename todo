@@ -1,0 +1,18 @@
+// Todo list 
+// To do items
+    // Title, Description , Due Date, Priority, Notes, Checklist
+    // todo items can be edited
+// Projects
+    // These contain the to do items which can be placed inside
+    // Default project where todo list items are intiially placed unless selected by user. 
+    // projects can be created by user
+// DOM related stuff
+    // seperate module to the functionality of the app
+// User interface
+    // view all projects
+    // view all todos
+    // Expanding a todo item to see and edits its details further
+    // delete a todo item
+// Local storage saves all data between sessions
+
+// Note: Can use date-fns for formatting and manipulating dates and times at a later date;
