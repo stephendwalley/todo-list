@@ -31,15 +31,4 @@ const todoItem = (title, description, dueDate, priority, notes, checklist) => {
 	};
 };
 
-const potato = todoItem(
-	"Potato Title",
-	"this is description",
-	"12/04/2025",
-	"Random notes lmao",
-	"Complete"
-);
-console.log(potato);
-potato.editTitle("newPotatoTitle");
-console.log(potato.title);
-
 export default todoItem;
