@@ -8,8 +8,9 @@ const project = (name) => {
         this.projectList.push(item);
     };
 
-    const removeTodoItem = function (item) {
+    const removeTodoItem = function (index) {
         // remove todo item (use local storage with index of)
+        this.projectList.splice(index, 1)
     }
 
 	return { name, projectList, addTodoItem };
