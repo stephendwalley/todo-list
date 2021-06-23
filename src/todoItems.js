@@ -25,9 +25,9 @@ const todoItem = (title, description, dueDate, priority, notes) => {
 		priority,
 		notes,
 		editTitle,
-        editDescription,
-        editDueDate,
+		editDescription,
+		editDueDate,
 	};
 };
 
-export default todoItem;
+export {todoItem};
