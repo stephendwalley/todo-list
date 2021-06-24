@@ -13,7 +13,7 @@ const project = (name) => {
 		this.projectList.splice(index, 1);
 	};
 
-	return { name, projectList, addTodoItem };
+	return { name, projectList, addTodoItem, removeTodoItem };
 };
 
 export {project};
