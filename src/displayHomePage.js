@@ -19,7 +19,7 @@ const homePage = (() => {
 	addProject.innerHTML = "Add Project";
 	addProject.addEventListener("click", () => {
 		// Calls new DOM event to handle project add which then calls the new project function
-
+		inputProject();
 		console.log("Create new project");
 	});
 
@@ -75,6 +75,26 @@ const inputTask = () => {
 
 const inputProject = () => {
 	// creates DOM elements which can take inputs for new project to call new project function
+	let content = document.getElementById("content");
+
+	let projectTitleInput = document.createElement("input");
+	projectTitleInput.id = "projectTitleInput";
+	projectTitleInput.type = "text";
+	projectTitleInput.placeholder = "New Project Name";
+
+
+	let addProjectBtn = document.createElement("button");
+	addProjectBtn.innerHTML = "Create New Project";
+	addProjectBtn.addEventListener("click", () => {
+		console.log(projectTitleInput.value)
+		let newProject = project(`${projectTitleInput.value}`)
+		console.log(newProject)
+		projectList.addProject(newProject);
+		console.log(projectList.projectList)
+		return newProject;
+	});
+
+	content.append(projectTitleInput, addProjectBtn);
 };
 
 export { homePage, inputTask, inputProject };

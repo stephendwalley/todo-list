@@ -20,7 +20,7 @@ const project = (name) => {
 
 // Project list of all the projects:
 
-const projectList = ((project) => {
+const projectList = (() => {
 	let projectList = [];
 
 	const addProject = function (project) {
