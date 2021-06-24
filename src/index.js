@@ -1,11 +1,15 @@
 import { todoItem } from "./todoItems";
-import { project } from "./project";
-import {displayProject } from "./displayProject";
+import { project, projectList } from "./project";
+import { displayProject } from "./displayProject";
 import { homePage } from "./displayHomePage";
 import { todoPage } from "./displayTodoItem";
 
 let defaultProject = project("Default Project");
+projectList.addProject(defaultProject);
 console.log(defaultProject);
+
+let secondaryProject = project("Secondary Project");
+projectList.addProject(secondaryProject);
 
 const potato = todoItem(
 	"Potato Title",
@@ -25,12 +29,9 @@ const potato2 = todoItem(
 	"Complete"
 );
 
-console.log(potato);
 potato.editTitle("newPotatoTitle");
-console.log(potato.title);
-
 defaultProject.addTodoItem(potato);
 defaultProject.addTodoItem(potato2);
-console.log(defaultProject);
-
 displayProject(defaultProject);
+
+console.log(projectList);
