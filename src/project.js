@@ -9,6 +9,8 @@ const project = (name) => {
 	};
 
 	const removeTodoItem = function (index) {
+		console.log("removed todo item success yay!")
+		console.log(`${this.projectList[index]}`)
 		// remove todo item (use local storage with index of)
 		this.projectList.splice(index, 1);
 	};
@@ -16,4 +18,4 @@ const project = (name) => {
 	return { name, projectList, addTodoItem, removeTodoItem };
 };
 
-export {project};
+export { project };

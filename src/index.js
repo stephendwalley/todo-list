@@ -1,9 +1,7 @@
 import { todoItem } from "./todoItems";
 import { project } from "./project";
-import {homePage} from "./displayHomePage"
+import { homePage } from "./displayHomePage";
 import { todoPage } from "./displayTodoItem";
-
-
 
 let defaultProject = project("Default Project");
 console.log(defaultProject);
@@ -35,5 +33,3 @@ defaultProject.addTodoItem(potato2);
 console.log(defaultProject);
 
 homePage.displayProject(defaultProject);
-
-

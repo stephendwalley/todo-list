@@ -1,4 +1,5 @@
 import { todoPage } from "./displayTodoItem";
+import {project} from "./project";
 
 // Interacts with the DOM to display relevant elements
 
@@ -15,14 +16,23 @@ const homePage = (() => {
 			const todoTitle = todoItem.title;
 			const todoDueDate = todoItem.dueDate;
 
-			const btn = document.createElement("button");
-			btn.innerHTML = "Click me and check the console!";
+			const moreInfoBtn = document.createElement("button");
+			moreInfoBtn.innerHTML = "More Information";
 
-			btn.onclick = function () {
+			moreInfoBtn.onclick = function () {
 				todoPage(todoItem);
 			};
-			element.append(todoTitle, todoDueDate, btn);
-			
+
+			const removeTodoBtn = document.createElement("button");
+			removeTodoBtn.innerHTML = "Remove Todo";
+
+			removeTodoBtn.onclick = function () {
+				project.removeTodoItem(`${i}`);
+				homePage.displayProject(project);
+			};
+
+
+			element.append(todoTitle, todoDueDate, moreInfoBtn, removeTodoBtn);
 		}
 		content.appendChild(element);
 		return content;

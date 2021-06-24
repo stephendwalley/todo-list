@@ -30,4 +30,4 @@ const todoItem = (title, description, dueDate, priority, notes) => {
 	};
 };
 
-export {todoItem};
+export { todoItem };
