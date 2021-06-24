@@ -13,6 +13,7 @@ const project = (name) => {
 		console.log(`${this.projectList[index]}`)
 		// remove todo item (use local storage with index of)
 		this.projectList.splice(index, 1);
+		
 	};
 
 	return { name, projectList, addTodoItem, removeTodoItem };
