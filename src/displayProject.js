@@ -6,6 +6,9 @@ const displayProject = function (project) {
 	const todoItemList = document.createElement("ul");
 	const content = document.getElementById("content");
 
+	// clear content
+	content.innerHTML = ""
+
 	let projectName = document.createElement("h2");
 	projectName.innerHTML = project.name;
 
@@ -51,7 +54,7 @@ const displayProjectNames = function () {
 	for (let i = 0; i < getProjectList.length; i++) {
 		let currentProject = getProjectList[i];
 		console.log(currentProject);
-		let displayProjectName = document.createElement("li")
+		let displayProjectName = document.createElement("li");
 		displayProjectName.innerHTML = currentProject.getName();
 		displayProjectName.onclick = function () {
 			displayProject(currentProject);
