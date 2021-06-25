@@ -89,6 +89,7 @@ const inputTask = () => {
 const inputProject = () => {
 	// creates DOM elements which can take inputs for new project to call new project function
 	let content = document.getElementById("content");
+	let inputProjectDiv = document.createElement("div");
 
 	let projectTitleInput = document.createElement("input");
 	projectTitleInput.id = "projectTitleInput";
@@ -104,10 +105,12 @@ const inputProject = () => {
 		projectList.addProject(newProject);
 		console.log(projectList.projectList);
 		displayProjectNames();
+		inputProjectDiv.innerHTML = "";
 		return newProject;
 	});
 
-	content.append(projectTitleInput, addProjectBtn);
+	inputProjectDiv.append(projectTitleInput, addProjectBtn);
+	content.append(inputProjectDiv);
 };
 
 export { homePage, inputTask, inputProject };
