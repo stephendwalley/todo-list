@@ -76,11 +76,7 @@ const inputTask = () => {
 		let newTodoItem = todoItem(`${todoItemTitle}`);
 		selectedProject.addTodoItem(newTodoItem);
 
-		console.log(selectedProjectIndex);
-		console.log(selectedProject);
-
-		console.log("adding todo to project");
-		console.log(selectedProject);
+		displayProject(selectedProject);
 	});
 
 	content.append(titleInput, selectProjectMenu, addTaskBtn);
