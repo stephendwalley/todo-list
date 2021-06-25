@@ -3,6 +3,8 @@ import { project, projectList } from "./project";
 import { displayProject, displayProjectNames } from "./displayProject";
 import { homePage } from "./displayHomePage";
 import { todoPage } from "./displayTodoItem";
+import './style.css'
+
 
 let defaultProject = project("Default Project");
 projectList.addProject(defaultProject);

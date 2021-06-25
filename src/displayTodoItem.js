@@ -1,4 +1,7 @@
+import "./style.css";
 // Display destailed information for todo item
+
+
 
 const todoPage = (todo) => {
 	let content = document.createElement("div");

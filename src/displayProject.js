@@ -1,5 +1,7 @@
 import { todoPage } from "./displayTodoItem";
 import { projectList } from "./project";
+import "./style.css";
+
 
 // displays individual projects on page
 const displayProject = function (project) {
@@ -58,6 +60,7 @@ const displayProjectNames = function () {
 		let currentProject = getProjectList[i];
 		console.log(currentProject);
 		let displayProjectName = document.createElement("li");
+		displayProjectName.classList.add("sideNavLinks")
 		displayProjectName.innerHTML = currentProject.getName();
 		displayProjectName.onclick = function () {
 			displayProject(currentProject);

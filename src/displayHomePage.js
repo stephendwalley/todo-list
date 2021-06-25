@@ -1,19 +1,21 @@
 import { project, projectList } from "./project";
 import { displayProject, displayProjectNames } from "./displayProject";
 import { todoItem } from "./todoItems";
+import "./style.css";
 
 const homePage = (() => {
 	// home page extra information display
-	let topNavBar = document.createElement("div");
-	let sideNavBar = document.createElement("div");
-
 	let content = document.createElement("div");
 	content.id = "content";
+	content.classList.add("main");
 
-	let logo = document.createElement("div");
+	let topNavBar = document.createElement("div");
+	topNavBar.classList.add("topNav");
+
+	let logo = document.createElement("a");
 	logo.innerHTML = "Trellist";
 
-	let addTask = document.createElement("button");
+	let addTask = document.createElement("a");
 	addTask.innerHTML = "Add Task";
 	addTask.addEventListener("click", () => {
 		// Project add todo item DOM element which then calls the project add todo item event
@@ -21,13 +23,18 @@ const homePage = (() => {
 		console.log("Project add todo item");
 	});
 
+	let sideNavBar = document.createElement("div");
+	sideNavBar.classList.add("sideNav");
+
 	let projectNavTitle = document.createElement("h3");
 	projectNavTitle.innerHTML = "Projects";
+	projectNavTitle.classList.add("sideNavHeader");
 
 	let projectNavList = document.createElement("div");
 	projectNavList.id = "projectNavList";
 
-	let addProject = document.createElement("button");
+	let addProject = document.createElement("a");
+	addProject.classList.add("sideNavLinks");
 	addProject.innerHTML = "Add Project";
 	addProject.addEventListener("click", () => {
 		// Calls new DOM event to handle project add which then calls the new project function
