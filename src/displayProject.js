@@ -1,14 +1,22 @@
 import { todoPage } from "./displayTodoItem";
+import { projectList } from "./project";
 
 // displays individual projects on page
 const displayProject = function (project) {
-	console.log(project);
-	const element = document.createElement("div");
+	const todoItemList = document.createElement("ul");
+	const content = document.getElementById("content");
+
+	let projectName = document.createElement("h2");
+	projectName.innerHTML = project.name;
 
 	for (let i = 0; i < project.projectList.length; i++) {
 		let todoItem = project.projectList[i];
-		const todoTitle = todoItem.title;
-		const todoDueDate = todoItem.dueDate;
+		let todoItemDiv = document.createElement("li");
+
+		let todoTitle = document.createElement("div");
+		todoTitle = todoItem.title;
+		let todoDueDate = document.createElement("div");
+		todoDueDate = todoItem.dueDate;
 
 		const moreInfoBtn = document.createElement("button");
 		moreInfoBtn.innerHTML = "More Information";
@@ -25,10 +33,29 @@ const displayProject = function (project) {
 			displayProject(project);
 		};
 
-		element.append(todoTitle, todoDueDate, moreInfoBtn, removeTodoBtn);
+		todoItemDiv.append(todoTitle, todoDueDate, moreInfoBtn, removeTodoBtn);
+
+		todoItemList.append(todoItemDiv);
 	}
-	document.body.appendChild(element);
-	return element;
+	content.append(projectName, todoItemList);
+
+	return content;
 };
 
-export { displayProject };
+const displayProjectNames = function () {
+	let getProjectList = projectList.projectList;
+
+	let displayProjectList = document.getElementById("projectNavList");
+
+	for (let i = 0; i < getProjectList.length; i++) {
+		let currentProject = getProjectList[i];
+		console.log(currentProject);
+		let displayProjectName = `<li>${currentProject.getName()}</li>`;
+		displayProjectList.innerHTML += displayProjectName;
+		console.log(displayProjectName);
+	}
+	console.log(displayProjectList);
+	return displayProjectList;
+};
+
+export { displayProject, displayProjectNames };

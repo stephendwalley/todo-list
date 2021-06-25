@@ -1,11 +1,17 @@
 import { project, projectList } from "./project";
+import { displayProjectNames } from "./displayProject";
 import { todoItem } from "./todoItems";
 
 const homePage = (() => {
 	// home page extra information display
+	let topNavBar = document.createElement("div");
+	let sideNavBar = document.createElement("div");
+
 	let content = document.createElement("div");
 	content.id = "content";
-	content.innerHTML = "content html stuff";
+
+	let logo = document.createElement("div");
+	logo.innerHTML = "Trellist";
 
 	let addTask = document.createElement("button");
 	addTask.innerHTML = "Add Task";
@@ -15,6 +21,12 @@ const homePage = (() => {
 		console.log("Project add todo item");
 	});
 
+	let projectNavTitle = document.createElement("h3");
+	projectNavTitle.innerHTML = "Projects";
+
+	let projectNavList = document.createElement("ul");
+	projectNavList.id = "projectNavList";
+
 	let addProject = document.createElement("button");
 	addProject.innerHTML = "Add Project";
 	addProject.addEventListener("click", () => {
@@ -23,8 +35,9 @@ const homePage = (() => {
 		console.log("Create new project");
 	});
 
-	content.append(addTask, addProject);
-	document.body.appendChild(content);
+	topNavBar.append(logo, addTask);
+	sideNavBar.append(projectNavTitle, projectNavList, addProject);
+	document.body.append(topNavBar, sideNavBar, content);
 })();
 
 const inputTask = () => {
@@ -82,15 +95,14 @@ const inputProject = () => {
 	projectTitleInput.type = "text";
 	projectTitleInput.placeholder = "New Project Name";
 
-
 	let addProjectBtn = document.createElement("button");
 	addProjectBtn.innerHTML = "Create New Project";
 	addProjectBtn.addEventListener("click", () => {
-		console.log(projectTitleInput.value)
-		let newProject = project(`${projectTitleInput.value}`)
-		console.log(newProject)
+		console.log(projectTitleInput.value);
+		let newProject = project(`${projectTitleInput.value}`);
+		console.log(newProject);
 		projectList.addProject(newProject);
-		console.log(projectList.projectList)
+		console.log(projectList.projectList);
 		return newProject;
 	});
 

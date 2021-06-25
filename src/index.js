@@ -1,6 +1,6 @@
 import { todoItem } from "./todoItems";
 import { project, projectList } from "./project";
-import { displayProject } from "./displayProject";
+import { displayProject, displayProjectNames } from "./displayProject";
 import { homePage } from "./displayHomePage";
 import { todoPage } from "./displayTodoItem";
 
@@ -32,6 +32,8 @@ const potato2 = todoItem(
 potato.editTitle("newPotatoTitle");
 defaultProject.addTodoItem(potato);
 defaultProject.addTodoItem(potato2);
+
 displayProject(defaultProject);
+displayProjectNames();
 
 console.log(projectList);

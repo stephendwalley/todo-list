@@ -15,7 +15,11 @@ const project = (name) => {
 		this.projectList.splice(index, 1);
 	};
 
-	return { name, projectList, addTodoItem, removeTodoItem };
+	const getName = function () {
+		return name;
+	};
+
+	return { getName, name, projectList, addTodoItem, removeTodoItem };
 };
 
 // Project list of all the projects:
