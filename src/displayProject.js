@@ -7,7 +7,7 @@ const displayProject = function (project) {
 	const content = document.getElementById("content");
 
 	// clear content
-	content.innerHTML = ""
+	content.innerHTML = "";
 
 	let projectName = document.createElement("h2");
 	projectName.innerHTML = project.name;
@@ -49,6 +49,9 @@ const displayProjectNames = function () {
 	let getProjectList = projectList.projectList;
 
 	let displayProjectListDiv = document.getElementById("projectNavList");
+	// clears project list
+	displayProjectListDiv.innerHTML = "";
+
 	let displayProjectList = document.createElement("ul");
 
 	for (let i = 0; i < getProjectList.length; i++) {

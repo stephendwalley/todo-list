@@ -1,5 +1,5 @@
 import { project, projectList } from "./project";
-import { displayProjectNames } from "./displayProject";
+import { displayProject, displayProjectNames } from "./displayProject";
 import { todoItem } from "./todoItems";
 
 const homePage = (() => {
@@ -103,6 +103,7 @@ const inputProject = () => {
 		console.log(newProject);
 		projectList.addProject(newProject);
 		console.log(projectList.projectList);
+		displayProjectNames();
 		return newProject;
 	});
 
