@@ -2,21 +2,24 @@ import { todoPage } from "./displayTodoItem";
 import { projectList } from "./project";
 import "./style.css";
 
-
 // displays individual projects on page
 const displayProject = function (project) {
 	const todoItemList = document.createElement("ul");
+	
+
 	const content = document.getElementById("content");
 
 	// clear content
 	content.innerHTML = "";
 
 	let projectName = document.createElement("h2");
+	projectName.classList.add("todoItemListHeader")
 	projectName.innerHTML = project.name;
 
 	for (let i = 0; i < project.projectList.length; i++) {
 		let todoItem = project.projectList[i];
 		let todoItemDiv = document.createElement("li");
+		todoItemDiv.classList.add("todoItemList");
 
 		let todoTitle = document.createElement("div");
 		todoTitle = todoItem.title;
@@ -60,7 +63,7 @@ const displayProjectNames = function () {
 		let currentProject = getProjectList[i];
 		console.log(currentProject);
 		let displayProjectName = document.createElement("li");
-		displayProjectName.classList.add("sideNavLinks")
+		displayProjectName.classList.add("sideNavLinks");
 		displayProjectName.innerHTML = currentProject.getName();
 		displayProjectName.onclick = function () {
 			displayProject(currentProject);

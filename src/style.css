@@ -13,9 +13,14 @@ body {
 }
 
 .main {
-    font-family:'Lucida Sans', Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
 	margin-left: 300px; /* Same as the width of the sidebar */
-	padding: 0px;
+	padding-left: 40px;
+}
+
+ul {
+	padding: 0;
+	list-style-type: none;
 }
 
 /* The sidebar menu */
@@ -33,7 +38,7 @@ body {
 }
 
 .sideNavHeader {
-    font-family:'Lucida Sans', Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
 	font-size: 20px;
@@ -42,7 +47,7 @@ body {
 }
 
 .sideNavLinks {
-	font-family:'Lucida Sans', Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
 	font-size: 12px;
@@ -62,7 +67,7 @@ body {
 }
 
 .topNav a {
-	font-family:'Lucida Sans', Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
 	float: left;
 	color: #fff9ca;
 	text-align: center;
@@ -75,8 +80,24 @@ body {
 	background-color: #ffa633;
 }
 
-/* Add a color to the active/current link */
-/* .topNav a.active {
-	background-color: #04aa6d;
-	color: white;
-} */
+.todoItemList {
+    margin-right: 40px;
+	list-style-type: none;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
+	text-decoration: none;
+	padding: 5px;
+	border-top: 1px solid #969696;
+	font-size: 16px;
+}
+
+.todoItemList:hover {
+	background-color: #bebebe49;
+}
+
+
+.todoItemListHeader {
+    margin-right: 40px;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
+	padding: 5px;
+	font-size: 20px;
+}
