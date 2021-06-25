@@ -45,17 +45,23 @@ const displayProject = function (project) {
 const displayProjectNames = function () {
 	let getProjectList = projectList.projectList;
 
-	let displayProjectList = document.getElementById("projectNavList");
+	let displayProjectListDiv = document.getElementById("projectNavList");
+	let displayProjectList = document.createElement("ul");
 
 	for (let i = 0; i < getProjectList.length; i++) {
 		let currentProject = getProjectList[i];
 		console.log(currentProject);
-		let displayProjectName = `<li>${currentProject.getName()}</li>`;
-		displayProjectList.innerHTML += displayProjectName;
+		let displayProjectName = document.createElement("li")
+		displayProjectName.innerHTML = currentProject.getName();
+		displayProjectName.onclick = function () {
+			displayProject(currentProject);
+		};
+		displayProjectList.appendChild(displayProjectName);
 		console.log(displayProjectName);
 	}
 	console.log(displayProjectList);
-	return displayProjectList;
+	displayProjectListDiv.appendChild(displayProjectList);
+	return displayProjectListDiv;
 };
 
 export { displayProject, displayProjectNames };

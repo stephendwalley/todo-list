@@ -24,7 +24,7 @@ const homePage = (() => {
 	let projectNavTitle = document.createElement("h3");
 	projectNavTitle.innerHTML = "Projects";
 
-	let projectNavList = document.createElement("ul");
+	let projectNavList = document.createElement("div");
 	projectNavList.id = "projectNavList";
 
 	let addProject = document.createElement("button");
