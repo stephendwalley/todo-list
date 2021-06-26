@@ -25,22 +25,31 @@ const displayProject = function (project) {
 			todoPage(todoItem);
 		};
 
+		let todoItemMainInfo = document.createElement("div");
+
 		let todoTitle = document.createElement("div");
-		todoTitle = todoItem.title;
+		todoTitle.innerHTML = todoItem.title;
 
 		// Make it check if there is scheduled date: if scheduled display date, if not then display button to schedule task
 		let todoDueDate = document.createElement("div");
-		todoDueDate = todoItem.dueDate;
+		if (todoItem.dueDate == null) {
+			todoItemMainInfo.append(todoTitle);
+			console.log("no due date")
+		} else {
+			todoDueDate.innerHTML = todoItem.dueDate;
+			todoItemMainInfo.append(todoTitle, todoDueDate);
+		}
 
-		const removeTodoBtn = document.createElement("button");
-		removeTodoBtn.innerHTML = "Remove Todo";
+		const removeTodoBtn = document.createElement("span");
+		removeTodoBtn.innerHTML = "&times;";
+		removeTodoBtn.classList.add("remove-todo");
 
 		removeTodoBtn.onclick = function () {
 			project.removeTodoItem(`${i}`);
 			displayProject(project);
 		};
 
-		todoItemDiv.append(todoTitle, todoDueDate, removeTodoBtn);
+		todoItemDiv.append(todoItemMainInfo, removeTodoBtn);
 
 		todoItemList.append(todoItemDiv);
 	}
