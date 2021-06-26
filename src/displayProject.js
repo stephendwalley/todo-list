@@ -34,7 +34,7 @@ const displayProject = function (project) {
 		let todoDueDate = document.createElement("div");
 		if (todoItem.dueDate == null) {
 			todoItemMainInfo.append(todoTitle);
-			console.log("no due date")
+			console.log("no due date");
 		} else {
 			todoDueDate.innerHTML = todoItem.dueDate;
 			todoItemMainInfo.append(todoTitle, todoDueDate);
