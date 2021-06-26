@@ -1,4 +1,6 @@
+import { homePage } from "./displayHomePage";
 import "./style.css";
+import { todoItem } from "./todoItems";
 // Display destailed information for todo item
 
 const todoPage = (todo) => {
@@ -28,19 +30,34 @@ const todoPage = (todo) => {
 	detailsModalContent.append(spanClose, todoInformation);
 
 	let title = document.createElement("div");
+	title.id = "title";
+
 	title.innerHTML = todo.title;
 	title.onclick = function () {
+		title.onclick = "";
+
 		let editTitleDiv = document.createElement("input");
 		editTitleDiv.type = "text";
 		editTitleDiv.value = todo.title;
 
 		let saveTitle = document.createElement("button");
 		saveTitle.innerHTML = "Save";
-		saveTitle.onclick = function () {};
+		saveTitle.onclick = function () {
+			let updatedTitle = editTitleDiv.value;
+			console.log(updatedTitle);
+			todo.editTitle(updatedTitle);
+			detailsModal.remove();
+			todoPage(todo);
+
+			// Find a way to reload the project list page after closing modal
+		};
 
 		let cancelTitle = document.createElement("button");
 		cancelTitle.innerHTML = "Cancel";
-		cancelTitle.onclick = function () {};
+		cancelTitle.onclick = function () {
+			detailsModal.remove();
+			todoPage(todo);
+		};
 
 		title.innerHTML = "";
 		title.append(editTitleDiv, saveTitle, cancelTitle);
@@ -48,6 +65,36 @@ const todoPage = (todo) => {
 
 	let description = document.createElement("div");
 	description.innerHTML = todo.description;
+	description.onclick = function () {
+		description.onclick = "";
+
+		let editDescriptionDiv = document.createElement("input");
+		editDescriptionDiv.type = "text";
+		editDescriptionDiv.value = todo.description;
+
+		let saveDescription = document.createElement("button");
+		saveDescription.innerHTML = "Save";
+		saveDescription.onclick = function () {
+			let updatedDescription = editDescriptionDiv.value;
+			todo.editDescription(updatedDescription);
+			detailsModal.remove();
+			todoPage(todo);
+		};
+
+		let cancelDescription = document.createElement("button");
+		cancelDescription.innerHTML = "Cancel";
+		cancelDescription.onclick = function () {
+			detailsModal.remove();
+			todoPage(todo);
+		};
+
+		description.innerHTML = "";
+		description.append(
+			editDescriptionDiv,
+			saveDescription,
+			cancelDescription
+		);
+	};
 
 	let dueDate = document.createElement("div");
 	dueDate.innerHTML = todo.dueDate;
@@ -55,17 +102,8 @@ const todoPage = (todo) => {
 	let priority = document.createElement("div");
 	priority.innerHTML = todo.priority;
 
-	let notes = document.createElement("div");
-	notes.innerHTML = todo.notes;
 
-	todoInformation.append(title, description, dueDate, priority, notes);
-	// todoInformation.innerHTML += `<ul>
-	//         <li>${title}</li>
-	//         <li>${description}</li>
-	//         <li>${dueDate}</li>
-	//         <li>${priority}</li>
-	//         <li>${notes}</li>
-	//     </ul>`;
+	todoInformation.append(title, description, dueDate, priority);
 
 	content.appendChild(detailsModal);
 

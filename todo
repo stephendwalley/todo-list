@@ -19,3 +19,4 @@
 
 
 // Make it check if there is scheduled date: if scheduled display date, if not then display button to schedule task (displayProject.js)
+// Find a way to reload the project list page after closing modal (displayTodoItem.js)

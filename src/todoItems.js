@@ -1,6 +1,6 @@
 // Creates the todo items using a factory function.
 
-const todoItem = (title, description, dueDate, priority, notes) => {
+const todoItem = (title, description, dueDate, priority) => {
 	// todo Item constructor
 
 	const editTitle = function (updatedTitle) {
@@ -23,7 +23,6 @@ const todoItem = (title, description, dueDate, priority, notes) => {
 		description,
 		dueDate,
 		priority,
-		notes,
 		editTitle,
 		editDescription,
 		editDueDate,

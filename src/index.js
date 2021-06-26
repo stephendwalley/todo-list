@@ -18,8 +18,6 @@ const potato = todoItem(
 	"this is description",
 	"12/04/2025",
 	"Top priority",
-	"Random Notes",
-	"Complete"
 );
 
 const potato2 = todoItem(
@@ -27,8 +25,6 @@ const potato2 = todoItem(
 	"this is description",
 	"12/04/2025",
 	"Top priority",
-	"Random Notes",
-	"Complete"
 );
 
 potato.editTitle("newPotatoTitle");
