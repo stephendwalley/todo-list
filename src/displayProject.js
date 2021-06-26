@@ -5,7 +5,6 @@ import "./style.css";
 // displays individual projects on page
 const displayProject = function (project) {
 	const todoItemList = document.createElement("ul");
-	
 
 	const content = document.getElementById("content");
 
@@ -13,7 +12,7 @@ const displayProject = function (project) {
 	content.innerHTML = "";
 
 	let projectName = document.createElement("h2");
-	projectName.classList.add("todoItemListHeader")
+	projectName.classList.add("todoItemListHeader");
 	projectName.innerHTML = project.name;
 
 	for (let i = 0; i < project.projectList.length; i++) {
@@ -21,17 +20,17 @@ const displayProject = function (project) {
 		let todoItemDiv = document.createElement("li");
 		todoItemDiv.classList.add("todoItemList");
 
-		let todoTitle = document.createElement("div");
-		todoTitle = todoItem.title;
-		let todoDueDate = document.createElement("div");
-		todoDueDate = todoItem.dueDate;
-
-		const moreInfoBtn = document.createElement("button");
-		moreInfoBtn.innerHTML = "More Information";
-
-		moreInfoBtn.onclick = function () {
+		todoItemDiv.onclick = function () {
+			// calls more information to the page in form of modal which can then be edited
 			todoPage(todoItem);
 		};
+
+		let todoTitle = document.createElement("div");
+		todoTitle = todoItem.title;
+
+		// Make it check if there is scheduled date: if scheduled display date, if not then display button to schedule task
+		let todoDueDate = document.createElement("div");
+		todoDueDate = todoItem.dueDate;
 
 		const removeTodoBtn = document.createElement("button");
 		removeTodoBtn.innerHTML = "Remove Todo";
@@ -41,7 +40,7 @@ const displayProject = function (project) {
 			displayProject(project);
 		};
 
-		todoItemDiv.append(todoTitle, todoDueDate, moreInfoBtn, removeTodoBtn);
+		todoItemDiv.append(todoTitle, todoDueDate, removeTodoBtn);
 
 		todoItemList.append(todoItemDiv);
 	}

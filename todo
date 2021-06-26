@@ -16,3 +16,6 @@
 // Local storage saves all data between sessions
 
 // Note: Can use date-fns for formatting and manipulating dates and times at a later date;
+
+
+// Make it check if there is scheduled date: if scheduled display date, if not then display button to schedule task (displayProject.js)
