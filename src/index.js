@@ -3,8 +3,7 @@ import { project, projectList } from "./project";
 import { displayProject, displayProjectNames } from "./displayProject";
 import { homePage } from "./displayHomePage";
 import { todoPage } from "./displayTodoItem";
-import './style.css'
-
+import "./style.css";
 
 let defaultProject = project("Default Project");
 projectList.addProject(defaultProject);
@@ -17,14 +16,14 @@ const potato = todoItem(
 	"Potato Title",
 	"this is description",
 	"12/04/2025",
-	"Top priority",
+	"Top priority"
 );
 
 const potato2 = todoItem(
 	"Potato Title",
 	"this is description",
 	"12/04/2025",
-	"Top priority",
+	"Top priority"
 );
 
 potato.editTitle("newPotatoTitle");

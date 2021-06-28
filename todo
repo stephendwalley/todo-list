@@ -1,4 +1,4 @@
-// Todo list 
+// Todo list - BASIC REQUIREMENTS
 // To do items
     // Title, Description , Due Date, Priority, Notes, Checklist
     // todo items can be edited
@@ -18,5 +18,10 @@
 // Note: Can use date-fns for formatting and manipulating dates and times at a later date;
 
 
+// THINGS TO FIX AND/OR ADD TO THE PROJECT
+
 // Make it check if there is scheduled date: if scheduled display date, if not then display button to schedule task (displayProject.js)
 // Find a way to reload the project list page after closing modal (displayTodoItem.js)
+// If trying to either close module or open up another edit for a different quality, and another module is already open for editing 
+   without having saved or cancelled, check with user to confirm whether they want to save changes or delete. (displayTodoItem.js)
+
