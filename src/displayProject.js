@@ -1,5 +1,6 @@
 import { todoPage } from "./displayTodoItem";
 import { projectList } from "./project";
+import { initiateStorage, updateStorage } from "./localStorage";
 import "./style.css";
 
 // displays individual projects on page
@@ -47,6 +48,7 @@ const displayProject = function (project) {
 		removeTodoBtn.onclick = function () {
 			project.removeTodoItem(`${i}`);
 			displayProject(project);
+			updateStorage(projectList.projectList);
 		};
 
 		todoItemDiv.append(todoItemMainInfo, removeTodoBtn);

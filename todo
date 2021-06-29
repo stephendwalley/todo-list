@@ -25,3 +25,4 @@
 // If trying to either close module or open up another edit for a different quality, and another module is already open for editing 
    without having saved or cancelled, check with user to confirm whether they want to save changes or delete. (displayTodoItem.js)
 
+// Use local storage to update all information: have to do a similar from data method to create new instances of each object when parseing;

@@ -1,6 +1,8 @@
 import { homePage } from "./displayHomePage";
 import "./style.css";
 import { todoItem } from "./todoItems";
+import { initiateStorage, updateStorage } from "./localStorage";
+import { projectList } from "./project";
 // Display destailed information for todo item
 
 const todoPage = (todo) => {
@@ -48,6 +50,7 @@ const todoPage = (todo) => {
 			todo.editTitle(updatedTitle);
 			detailsModal.remove();
 			todoPage(todo);
+			updateStorage(projectList.projectList);
 
 			// Find a way to reload the project list page after closing modal
 		};
@@ -79,6 +82,7 @@ const todoPage = (todo) => {
 			todo.editDescription(updatedDescription);
 			detailsModal.remove();
 			todoPage(todo);
+			updateStorage(projectList.projectList);
 		};
 
 		let cancelDescription = document.createElement("button");

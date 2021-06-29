@@ -1,9 +1,12 @@
 import { project, projectList } from "./project";
 import { displayProject, displayProjectNames } from "./displayProject";
 import { todoItem } from "./todoItems";
+import { initiateStorage, updateStorage } from "./localStorage";
 import "./style.css";
 
 const homePage = (() => {
+	// Initiate local storage
+	
 	// home page extra information display
 	let content = document.createElement("div");
 	content.id = "content";
@@ -45,6 +48,8 @@ const homePage = (() => {
 	topNavBar.append(logo, addTask);
 	sideNavBar.append(projectNavTitle, projectNavList, addProject);
 	document.body.append(topNavBar, sideNavBar, content);
+
+	
 })();
 
 const inputTask = () => {
@@ -84,6 +89,7 @@ const inputTask = () => {
 		selectedProject.addTodoItem(newTodoItem);
 
 		displayProject(selectedProject);
+		updateStorage(projectList.projectList);
 	});
 
 	content.append(titleInput, selectProjectMenu, addTaskBtn);
@@ -109,6 +115,7 @@ const inputProject = () => {
 		console.log(projectList.projectList);
 		displayProjectNames();
 		inputProjectDiv.innerHTML = "";
+		updateStorage(projectList.projectList);
 		return newProject;
 	});
 
