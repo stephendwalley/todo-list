@@ -1,8 +1,10 @@
 import { homePage } from "./displayHomePage";
-import "./style.css";
 import { todoItem } from "./todoItems";
 import { initiateStorage, updateStorage } from "./localStorage";
 import { projectList } from "./project";
+import "./style.css";
+
+import { format } from "date-fns";
 // Display destailed information for todo item
 
 const todoPage = (todo) => {
@@ -101,19 +103,22 @@ const todoPage = (todo) => {
 	};
 
 	let dueDate = document.createElement("div");
-	dueDate.innerHTML = todo.dueDate;
+	if (todo.dueDate != null) {
+		dueDate.innerHTML = format(new Date(todo.dueDate), "MMM d");
+	} else {
+		dueDate.innerHTML = "Add Due Date";
+	}
 
 	dueDate.onclick = function () {
 		dueDate.onclick = "";
 
 		let editDateDiv = document.createElement("input");
 		editDateDiv.type = "date";
-		editDateDiv.value = todo.dueDate;
 
 		let saveDate = document.createElement("button");
 		saveDate.innerHTML = "Save";
 		saveDate.onclick = function () {
-			let updatedDate = editDateDiv.value;
+			let updatedDate = format(new Date(editDateDiv.value), "MMM d");
 			todo.editDueDate(updatedDate);
 			detailsModal.remove();
 			todoPage(todo);
