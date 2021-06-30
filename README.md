@@ -11,3 +11,4 @@ Items and features to work on: (see todo file for more info);
     function can be run to get current project and call displayProject(currentProject);
 
  - fix undefined display when no todo info; fix todo display to show titles of each topic; and css to make input boxes match website style
+ - Organise todo items by date due using date-fns
