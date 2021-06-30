@@ -26,3 +26,11 @@
    without having saved or cancelled, check with user to confirm whether they want to save changes or delete. (displayTodoItem.js)
 
 // Use local storage to update all information: have to do a similar from data method to create new instances of each object when parseing;
+
+// add date-fns to organise dates by date due etc;
+
+
+// save current project by highlighting project list project with a tag of currentProject and giving a basic css change. Thus, when refreshing the page after editing,
+// function can be run to get current project and call displayProject(currentProject);
+
+// fix undefined display when no todo info; fix todo display to show titles of each topic; and css to make input boxes match website style

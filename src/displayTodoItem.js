@@ -103,9 +103,36 @@ const todoPage = (todo) => {
 	let dueDate = document.createElement("div");
 	dueDate.innerHTML = todo.dueDate;
 
+	dueDate.onclick = function () {
+		dueDate.onclick = "";
+
+		let editDateDiv = document.createElement("input");
+		editDateDiv.type = "date";
+		editDateDiv.value = todo.dueDate;
+
+		let saveDate = document.createElement("button");
+		saveDate.innerHTML = "Save";
+		saveDate.onclick = function () {
+			let updatedDate = editDateDiv.value;
+			todo.editDueDate(updatedDate);
+			detailsModal.remove();
+			todoPage(todo);
+			updateStorage(projectList.projectList);
+		};
+
+		let cancelDate = document.createElement("button");
+		cancelDate.innerHTML = "Cancel";
+		cancelDate.onclick = function () {
+			detailsModal.remove();
+			todoPage(todo);
+		};
+
+		dueDate.innerHTML = "";
+		dueDate.append(editDateDiv, saveDate, cancelDate);
+	};
+
 	let priority = document.createElement("div");
 	priority.innerHTML = todo.priority;
-
 
 	todoInformation.append(title, description, dueDate, priority);
 
